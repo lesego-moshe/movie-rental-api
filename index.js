@@ -15,7 +15,7 @@ const auth = require('./routes/auth');
 
 winston.add(winston.transports.File, {filename: 'logfile.log'});
 // winston.add(winston.transports.MongoDB, {
-//     db: 'mongodb://localhost/vidly',
+//     db: 'mongodb://localhost/movie-rental-api',
 //     level: 'error'
 // });
 
@@ -24,7 +24,7 @@ if (!config.get('jwtPrivateKey')){
     process.exit(1);
 }
 
-mongoose.connect('mongodb://localhost/vidly')
+mongoose.connect('mongodb://localhost/movie-rental-api')
 .then(() => console.log('Connected to MongoDB...'))
 .catch(err => console.error('Could not connect to MongoDB...', err));
 
